@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XYZ Bank</title>
+
+    <script>
+        function trigger() {
+            alert("Welcome to XYZ bank !!!!");
+        }
+
+        function validateCustomer() {
+            var custId = document.getElementById("custID").value;
+
+            if (custId == "") {
+                alert("Customer ID can't be blank");
+                return;
+            }
+
+            if (custId.includes("XYZ")) {
+                alert("Customer ID is valid, you can proceed further to generate coupon");
+            } else {
+                alert("You are not a valid customer");
+            }
+        }
+
+        function generateCoupon() {
+            var custId = document.getElementById("custID").value;
+
+            if (custId.includes("XYZ")) {
+                var coupon = custId + "789456";
+                alert("Your coupon is : " + coupon);
+            } else {
+                alert("Invalid customer ID so coupon can't be generated");
+            }
+        }
+
+        function hideSteps() {
+            document.getElementById("demo").style.display = "none";
+        }
+    </script>
+</head>
+
+<body onload="trigger()">
+
+<p id="hover">Welcome customer !!!</p>
+
+<p id="demo">
+Follow the below Steps to get Diwali coupon:-<br><br>
+
+1) Enter your customer ID in the textbox<br>
+2) Click on Validate customer button<br>
+3) Click on Register button to hide all the above steps and can apply for coupons
+</p>
+
+<button type="button" onclick="hideSteps()">
+Click here to Register
+</button>
+
+<br><br>
+
+Enter Customer ID:
+<input id="custID" type="text">
+
+<br><br>
+
+<button type="button" onclick="validateCustomer()">
+Validate customer
+</button>
+
+<button type="button" onclick="generateCoupon()">
+Click here to generate coupon
+</button>
+
+</body>
+</html>
